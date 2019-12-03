@@ -80,7 +80,6 @@
         </p>
 
           <!-- Interest in IT Section -->
-          <hr style="width:200px" class="w3-opacity">
           <h3 id="interest" class="w3-padding-16 w3-text-light-grey">Interest in IT</h3>
           <hr style="width:200px" class="w3-opacity">
           <p></p>
@@ -88,7 +87,6 @@
 
 
           <!-- Ideal Job Section -->
-          <hr style="width:200px" class="w3-opacity">
           <h3 id="job" class="w3-padding-16 w3-text-light-grey">Ideal Job</h3>
           <hr style="width:200px" class="w3-opacity">
           <p><a href="https://www.seek.com.au/job/40489950?searchrequesttoken=f81fd986-984a-4121-9ea1-dca1ab52715e&type=standout">CYBER SECURITY SPECIALIST
@@ -97,14 +95,40 @@
 
 
           <!-- Profile Section -->
-          <hr style="width:200px" class="w3-opacity">
+
           <h3 id="profile" class="w3-padding-16 w3-text-light-grey">Profile</h3>
           <hr style="width:200px" class="w3-opacity">
-          <p></p>
+          <!-- Container (Profile Section) -->
+          <div class="w3-content w3-container w3-padding-64" id="profile">
+            <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+            <div class="w3-row-padding w3-center">
+              <div class="w3-col m3">
+                <img src="media/tests/brigs-myers-test.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Results of an online Myers-Briggs test">
+              </div>
+
+              <div class="w3-col m3">
+                <img src="media/tests/education-planner-test.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Results of an online learning test (Education Planner)">
+              </div>
+
+              <div class="w3-col m3">
+                <img src="media/tests/Big-five-test.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Results of Big Five online test">
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Modal for full size images on click-->
+          <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+              <img id="img01" class="w3-image">
+              <p id="caption" class="w3-opacity w3-large"></p>
+            </div>
+          </div>
           <br>
 
           <!-- Project Idea Section -->
-          <hr style="width:200px" class="w3-opacity">
           <h3 id="idea" class="w3-padding-16 w3-text-light-grey">Project Idea</h3>
           <hr style="width:200px" class="w3-opacity">
           <p></p>
@@ -112,6 +136,7 @@
 
       <!-- Footer -->
         <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+          <a href="https://baytechanddesign.com"><i class="fa fa-desktop w3-hover-opacity"></i></a>
           <a href="https://fb.me/baytechanddesign" target=_blank><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
           <a href="https://www.instagram.com/baytechanddesign" target=_blank><i class="fa fa-instagram w3-hover-opacity"></i></a>
           <a href="https://www.snapchat.com/add/douglasb370" target=_blank><i class="fa fa-snapchat w3-hover-opacity"></i></a>
@@ -126,3 +151,14 @@
 
   </body>
 </html>
+
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
